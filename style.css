@@ -13,7 +13,7 @@ body {
     height: 100vh;
     color: var(--text-color);
     background: #dfe6e9;
-    overflow-x: hidden; /* Yatay kaydırmayı engelle */
+    overflow-x: hidden;
 }
 
 /* --- ANA SAYFA --- */
@@ -30,10 +30,10 @@ body.landing-page {
 
 .landing-container {
     width: 100%;
-    max-width: 1400px; /* Geniş ekranlarda daha yayvan olsun */
+    max-width: 1400px;
     height: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Sol Boş | Sağ Dolu */
+    grid-template-columns: 1fr 1fr;
     padding: 20px;
 }
 
@@ -41,23 +41,23 @@ body.landing-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end; /* İçeriği sağa yasla */
+    align-items: flex-end; 
     text-align: right; 
     padding-right: 2%; 
     gap: 30px;
 }
 
-/* --- BAŞLIK (ARTIK DAHA BÜYÜK) --- */
+/* BAŞLIK */
 .about-text-floating h1 {
     font-family: 'Titan One', cursive; 
-    font-size: 5rem; /* İSTEĞİN ÜZERİNE BÜYÜTÜLDÜ (Eskisi 3.5rem idi) */
+    font-size: 5rem;
     color: white;
     text-shadow: 
         4px 4px 0px #0984e3, 
         -2px -2px 0 #000, 
         2px -2px 0 #000, 
         -2px 2px 0 #000, 
-        2px 2px 0 #000; /* Daha kalın kontür */
+        2px 2px 0 #000;
     margin-bottom: 5px;
     line-height: 1;
     transform: rotate(-2deg);
@@ -81,7 +81,6 @@ body.landing-page {
     margin-left: auto;
 }
 
-/* YAZI STİLİ (NET OKUNABİLİR) */
 .mini-bio p {
     font-family: 'Nunito', sans-serif;
     font-weight: 900; 
@@ -101,7 +100,7 @@ body.landing-page {
     color: #ffdd59; 
 }
 
-/* --- KİTAPLAR --- */
+/* KİTAPLAR */
 .books-section {
     display: flex;
     flex-direction: column;
@@ -127,7 +126,7 @@ body.landing-page {
 
 .book-shape-card {
     position: relative;
-    width: 300px; /* Biraz daha geniş */
+    width: 300px;
     background: var(--book-color); 
     border-radius: 5px 20px 20px 5px; 
     padding: 25px;
@@ -197,46 +196,43 @@ body.landing-page {
 }
 
 /* =========================================
-   %100 MOBİL UYUMLULUK AYARLARI
+   MOBİL AYARLARI (GÜNCELLENDİ)
    ========================================= */
 
-/* Tablet ve Küçük Laptoplar (1024px ve altı) */
 @media (max-width: 1024px) {
     .about-text-floating h1 { font-size: 3.5rem; }
     .landing-container { padding: 10px; }
 }
 
-/* Mobil Cihazlar (768px ve altı) */
 @media (max-width: 768px) {
     body.landing-page {
         height: auto;
         min-height: 100vh;
-        background-position: center top; /* Görselin üst kısmı görünsün */
-        background-attachment: scroll; /* Mobilde sabit kalmasın, sorun çıkarabilir */
+        /* GÜNCELLENDİ: Resmi daha iyi ortalamak için */
+        background-position: center center; 
+        background-attachment: scroll; /* Mobilde sabit kalma sorununu çözer */
+        background-size: cover; 
         align-items: flex-start;
-        padding-top: 20px;
+        padding-top: 30px;
         padding-bottom: 40px;
     }
 
     .landing-container {
-        display: flex; /* Grid yerine Flex */
+        display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
     }
 
-    .spacer-col {
-        display: none; /* Mobilde sol boşluğu kapat */
-    }
+    .spacer-col { display: none; }
 
     .content-col {
-        align-items: center; /* Her şeyi ortala */
+        align-items: center; 
         text-align: center;
         padding-right: 0;
         width: 100%;
     }
 
-    /* Başlık Mobilde Küçülsün ama hala büyük dursun */
     .about-text-floating h1 {
         font-size: 2.8rem; 
         text-shadow: 3px 3px 0 #0984e3, -1px -1px 0 #000, 1px -1px 0 #000;
@@ -253,11 +249,11 @@ body.landing-page {
     }
 
     .mini-bio p {
-        font-size: 1.1rem; /* Okunabilir boyut */
+        font-size: 1.1rem; 
     }
 
     .books-section {
-        align-items: center; /* Kitabı ortala */
+        align-items: center; 
         width: 100%;
         margin-top: 30px;
     }
@@ -268,19 +264,18 @@ body.landing-page {
     }
 
     .book-shape-card {
-        width: 100%; /* Ekran genişliğine yayıl */
-        max-width: 320px; /* Ama çok da büyümesin */
+        width: 100%;
+        max-width: 320px;
     }
 }
 
-/* Çok Küçük Telefonlar (400px ve altı) */
 @media (max-width: 400px) {
     .about-text-floating h1 { font-size: 2.2rem; }
     .book-shape-card { max-width: 280px; }
     .book-icon { font-size: 2.5rem; }
 }
 
-/* --- KİTAP OKUMA SAYFASI İÇİN DİĞER CSS KODLARI (DEĞİŞMEDİ) --- */
+/* --- KİTAP SAYFASI --- */
 #loader { position: fixed; inset: 0; background: #ff9f43; z-index: 9999; display: flex; justify-content: center; align-items: center; font-family: 'Fredoka', sans-serif; font-size: 2rem; color: white; text-shadow: 2px 2px 0 rgba(0,0,0,0.1); }
 .bg-layer { position: absolute; inset: 0; background: linear-gradient(180deg, #dff9fb 0%, #c7ecee 100%); z-index: 0; transition: background 1.5s ease; }
 .particles { position: absolute; width: 100%; height: 100%; pointer-events: none; z-index: 0; }

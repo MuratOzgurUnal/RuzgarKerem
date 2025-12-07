@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Sadece Kitap Sayfasında Çalışsın Diye Kontrol
+    // Sadece Kitap Sayfasında Çalışsın
     if (document.querySelector('.story-container')) {
         initBook();
     } else {
-        // Ana Sayfadaysak Loader'ı hemen kaldır
+        // Ana Sayfadaysak Loader'ı kaldır
         gsap.to("#loader", { duration: 0.5, opacity: 0, display: "none" });
     }
 });
@@ -101,12 +101,9 @@ function initBook() {
         if(bgLayer) gsap.to(bgLayer, { background: colors, duration: 1 });
     }
 
-    let touchStartX = 0;
-    document.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
-    document.addEventListener('touchend', e => {
-        if (e.changedTouches[0].screenX < touchStartX - 50) nextSlide();
-        if (e.changedTouches[0].screenX > touchStartX + 50) prevSlide();
-    });
+    // --- ÖNEMLİ DEĞİŞİKLİK ---
+    // Dokunmatik kaydırma (Swipe) özellikleri kaldırıldı.
+    // Klavye desteği devam ediyor.
     document.addEventListener('keydown', e => {
         if (e.key === "ArrowRight") nextSlide();
         if (e.key === "ArrowLeft") prevSlide();
