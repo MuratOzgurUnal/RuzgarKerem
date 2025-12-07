@@ -19,7 +19,9 @@ body {
 /* --- ANA SAYFA --- */
 body.landing-page {
     overflow-y: auto;
-    background: url('assets/Anasayfa.svg') no-repeat center center fixed;
+    /* GÜNCELLENDİ: Arka Plan Ayarı */
+    background: url('assets/Anasayfa.svg') no-repeat center bottom fixed;
+    /* 'cover' özelliği görseli ekranı dolduracak şekilde ayarlar */
     background-size: cover; 
     height: 100vh;
     width: 100%;
@@ -44,7 +46,7 @@ body.landing-page {
     align-items: flex-end; 
     text-align: right; 
     padding-right: 2%; 
-    gap: 30px;
+    gap: 20px; /* Genel boşluk biraz azaltıldı */
 }
 
 /* BAŞLIK */
@@ -100,12 +102,13 @@ body.landing-page {
     color: #ffdd59; 
 }
 
-/* KİTAPLAR */
+/* --- KİTAPLAR BÖLÜMÜ (BOŞLUKLAR DÜZELTİLDİ) --- */
 .books-section {
     display: flex;
     flex-direction: column;
     align-items: flex-end; 
-    gap: 15px;
+    /* Gap değerini sıfırladık, birbirlerine yaklaşsınlar */
+    gap: 0px; 
     margin-top: 10px;
 }
 
@@ -122,6 +125,10 @@ body.landing-page {
     margin-right: 20px;
     text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
     letter-spacing: 1px;
+    /* Başlığı kitabın üstüne bindirmek için eksi margin ve z-index */
+    margin-bottom: -20px; 
+    z-index: 10;
+    position: relative;
 }
 
 .book-shape-card {
@@ -129,12 +136,13 @@ body.landing-page {
     width: 300px;
     background: var(--book-color); 
     border-radius: 5px 20px 20px 5px; 
-    padding: 25px;
+    padding: 40px 25px 25px 25px; /* Üstten padding artırıldı (başlık gelince sıkışmasın) */
     text-align: center;
     box-shadow: 15px 15px 30px rgba(0,0,0,0.4), inset -5px 0 10px rgba(0,0,0,0.1);
     border: 3px solid #e67e22;
     transition: transform 0.3s;
     display: flex;
+    z-index: 5;
 }
 
 .book-spine {
@@ -196,7 +204,7 @@ body.landing-page {
 }
 
 /* =========================================
-   MOBİL AYARLARI (GÜNCELLENDİ)
+   MOBİL AYARLARI
    ========================================= */
 
 @media (max-width: 1024px) {
@@ -208,9 +216,9 @@ body.landing-page {
     body.landing-page {
         height: auto;
         min-height: 100vh;
-        /* GÜNCELLENDİ: Resmi daha iyi ortalamak için */
-        background-position: center center; 
-        background-attachment: scroll; /* Mobilde sabit kalma sorununu çözer */
+        /* MOBİLDE RESİM ORTALANSIN */
+        background-position: center bottom; 
+        background-attachment: scroll; 
         background-size: cover; 
         align-items: flex-start;
         padding-top: 30px;
@@ -231,6 +239,7 @@ body.landing-page {
         text-align: center;
         padding-right: 0;
         width: 100%;
+        gap: 20px;
     }
 
     .about-text-floating h1 {
@@ -243,24 +252,20 @@ body.landing-page {
         margin-bottom: 20px;
     }
 
-    .mini-bio {
-        margin: 0 auto;
-        width: 100%;
-    }
-
-    .mini-bio p {
-        font-size: 1.1rem; 
-    }
+    .mini-bio { margin: 0 auto; width: 100%; }
+    .mini-bio p { font-size: 1.1rem; }
 
     .books-section {
         align-items: center; 
         width: 100%;
-        margin-top: 30px;
+        margin-top: 20px;
     }
 
     .ribbon-title {
         margin-right: 0;
         font-size: 1.4rem;
+        /* Mobilde de yapışık olsun */
+        margin-bottom: -15px;
     }
 
     .book-shape-card {
@@ -275,7 +280,7 @@ body.landing-page {
     .book-icon { font-size: 2.5rem; }
 }
 
-/* --- KİTAP SAYFASI --- */
+/* --- KİTAP OKUMA SAYFASI İÇİN DİĞER CSS KODLARI --- */
 #loader { position: fixed; inset: 0; background: #ff9f43; z-index: 9999; display: flex; justify-content: center; align-items: center; font-family: 'Fredoka', sans-serif; font-size: 2rem; color: white; text-shadow: 2px 2px 0 rgba(0,0,0,0.1); }
 .bg-layer { position: absolute; inset: 0; background: linear-gradient(180deg, #dff9fb 0%, #c7ecee 100%); z-index: 0; transition: background 1.5s ease; }
 .particles { position: absolute; width: 100%; height: 100%; pointer-events: none; z-index: 0; }

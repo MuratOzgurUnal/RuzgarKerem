@@ -101,9 +101,8 @@ function initBook() {
         if(bgLayer) gsap.to(bgLayer, { background: colors, duration: 1 });
     }
 
-    // --- ÖNEMLİ DEĞİŞİKLİK ---
-    // Dokunmatik kaydırma (Swipe) özellikleri kaldırıldı.
-    // Klavye desteği devam ediyor.
+    // --- ÖNEMLİ: Dokunmatik kodlar kaldırıldı ---
+    // Sadece Klavye OK Tuşları çalışır
     document.addEventListener('keydown', e => {
         if (e.key === "ArrowRight") nextSlide();
         if (e.key === "ArrowLeft") prevSlide();
