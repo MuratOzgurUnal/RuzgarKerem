@@ -279,7 +279,7 @@ body.landing-page {
     /* --- DÜZELTME: KİTAP KARTI KÜÇÜLTÜLDÜ --- */
     .book-shape-card {
         width: 100%;
-        max-width: 240px; /* Genişlik 320'den 240'a düştü */
+        max-width: 200px; /* Genişlik 320'den 240'a düştü */
         padding: 30px 15px 15px 15px;
     }
 
