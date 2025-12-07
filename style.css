@@ -211,7 +211,6 @@ body.landing-page {
     body.landing-page {
         height: auto;
         min-height: 100vh;
-        /* Resmi tam ortala ki çocuk görünsün */
         background-position: center center; 
         background-attachment: scroll; 
         background-size: cover; 
@@ -238,7 +237,6 @@ body.landing-page {
         gap: 15px;
     }
 
-    /* Başlık Boyutu */
     .about-text-floating h1 {
         font-size: 2.8rem; 
         text-shadow: 2px 2px 0 #0984e3, -1px -1px 0 #000;
@@ -253,64 +251,63 @@ body.landing-page {
 
     .mini-bio { margin: 0 auto; width: 100%; }
     
-    /* Biyografi Yazıları - Biraz daha kompakt */
     .mini-bio p {
         font-size: 1rem; 
         margin-bottom: 8px;
         text-shadow: 1px 1px 0 #000;
     }
 
+    /* --- ÖNEMLİ DEĞİŞİKLİK: SAĞA YASLAMA --- */
     .books-section {
-        align-items: center; 
+        align-items: flex-end; /* Ortalamak yerine SAĞA yasla */
         width: 100%;
         margin-top: 20px;
-        /* Kitap bölümünü biraz sağa kaydırarak çocuğun yüzünü açabiliriz */
-        transform: translateX(10px); 
+        padding-right: 10px; /* Ekranın en ucuna yapışmasın diye az boşluk */
     }
 
-    /* Kitaplarım Başlığı Küçüldü */
     .ribbon-title {
-        margin-right: 0;
-        font-size: 1.2rem;
-        padding: 8px 25px;
+        margin-right: 10px; /* Başlığı da sağa çek */
+        font-size: 1.1rem; /* Başlığı küçült */
+        padding: 8px 20px;
         margin-bottom: -15px;
     }
 
-    /* --- DÜZELTME: KİTAP KARTI KÜÇÜLTÜLDÜ --- */
+    /* --- ÖNEMLİ DEĞİŞİKLİK: KİTAP BOYUTU --- */
     .book-shape-card {
         width: 100%;
-        max-width: 200px; /* Genişlik 320'den 240'a düştü */
-        padding: 30px 15px 15px 15px;
+        max-width: 200px; /* Genişlik 240'tan 200'e düştü (Çok daha küçük) */
+        padding: 25px 10px 10px 10px;
     }
 
     .book-icon {
-        font-size: 2.5rem; /* İkon küçüldü */
+        font-size: 2rem; /* İkon küçüldü */
         margin-bottom: 5px;
     }
 
     .book-shape-card h3 {
-        font-size: 1.1rem; /* Kitap ismi küçüldü */
+        font-size: 1rem; /* Başlık küçüldü */
         margin-bottom: 5px;
     }
 
     .book-shape-card p {
-        font-size: 0.85rem; /* Açıklama küçüldü */
-        margin-bottom: 15px;
+        font-size: 0.8rem; /* Yazı küçüldü */
+        margin-bottom: 10px;
+        line-height: 1.2;
     }
 
     .read-btn {
-        padding: 8px 0;
-        font-size: 0.9rem;
+        padding: 6px 0;
+        font-size: 0.8rem;
+        border-radius: 15px;
     }
     
-    /* Kitap Sırtı Oranı */
-    .book-spine { width: 15px; }
-    .book-cover-content { margin-left: 10px; }
+    .book-spine { width: 12px; }
+    .book-cover-content { margin-left: 8px; }
 }
 
 @media (max-width: 400px) {
     .about-text-floating h1 { font-size: 2.2rem; }
-    .book-shape-card { max-width: 220px; } /* Çok küçük ekranlar için daha da küçük */
+    .book-shape-card { max-width: 180px; } /* Küçük telefonlarda daha da küçük */
 }
 
 /* --- KİTAP OKUMA SAYFASI İÇİN DİĞER CSS KODLARI --- */
