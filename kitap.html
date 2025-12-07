@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Gizemli Okul Gezisi</title>
     <link rel="stylesheet" href="style.css">
-    <!-- YENİ FONT: 'Fredoka' (Çok daha okunaklı ve yuvarlak) -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@700;900&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
@@ -185,16 +184,22 @@
             </div>
         </section>
 
-        <!-- 13. SAYFA (SON) -->
+        <!-- 13. SAYFA (SON & AKTİVİTELER) -->
         <section class="slide" id="slide-13">
             <div class="visual-area">
                 <img src="assets/Sayfa13.png" class="story-img">
             </div>
             <div class="text-area">
-                <p>Rüzgar, tüm gücünü toplayarak duvara tutundu. Bir, iki, üç hamle derken kendini yukarı çekti ve duvarın tepesine ulaştı!</p>
-                <p>Aşağıya baktığında o tanıdık yüzü gördü: Özge Öğretmen!</p>
-                <p>Rüzgar sevinçle, “Öğretmenim, buradayız!” diye bağırdı. Sonunda başarmıştı. Hem öğretmenine kavuşmuş hem de Küçük Maceracılar takımını kurtarmıştı. O gün hepsi için unutulmaz, gizemli ve mutlu sonla biten bir okul gezisi olmuştu.</p>
-                <h2 class="end-text">SON.</h2>
+                <h2 class="end-text">HİKAYE BİTTİ! 👏</h2>
+                <p>Rüzgar, tüm gücünü toplayarak duvara tutundu ve yukarı tırmandı! Aşağıya baktığında Özge Öğretmen'i gördü. "Öğretmenim, buradayız!" diye bağırdı. Sonunda başarmışlardı!</p>
+                <p>Tebrikler! Küçük Maceracılar ile birlikte sen de bu macerayı tamamladın.</p>
+                <p>Şimdi kendini deneme ve eğlenme zamanı!</p>
+                
+                <div class="activity-buttons">
+                    <button class="act-btn test-btn" onclick="openQuiz()">🧠 Test Çöz</button>
+                    <button class="act-btn game-btn" onclick="openGame()">🎮 Labirent Oyna</button>
+                </div>
+
                 <button class="restart-btn" onclick="location.reload()">TEKRAR OKU ↺</button>
             </div>
         </section>
@@ -206,6 +211,50 @@
         <button onclick="prevSlide()" class="nav-btn">❮</button>
         <span class="page-indicator" id="pageNumber">1 / 13</span>
         <button onclick="nextSlide()" class="nav-btn">❯</button>
+    </div>
+
+    <!-- TEST MODALI (GİZLİ PENCERE) -->
+    <div id="quizModal" class="modal-overlay">
+        <div class="modal-content quiz-box">
+            <button class="close-modal" onclick="closeModal('quizModal')">✖</button>
+            <h2 id="quizTitle">BİLGİ YARIŞMASI</h2>
+            
+            <div id="quizQuestionArea">
+                <h3 id="qText">Soru yükleniyor...</h3>
+                <div class="quiz-options">
+                    <button class="q-opt" onclick="checkAnswer(0)" id="opt0">Seçenek A</button>
+                    <button class="q-opt" onclick="checkAnswer(1)" id="opt1">Seçenek B</button>
+                </div>
+            </div>
+            
+            <div id="quizResult" style="display:none;">
+                <div class="result-icon">🏆</div>
+                <h3>TEBRİKLER!</h3>
+                <p>Soruların hepsini doğru bildin!</p>
+                <button class="act-btn test-btn" onclick="closeModal('quizModal')">Kapat</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- OYUN MODALI (LABİRENT - GİZLİ PENCERE) -->
+    <div id="gameModal" class="modal-overlay">
+        <div class="modal-content game-box">
+            <button class="close-modal" onclick="closeModal('gameModal')">✖</button>
+            <h2>ÖĞRETMENE ULAŞ!</h2>
+            <p style="font-size: 0.9rem; margin-bottom: 10px;">Rüzgar'ı (Mavi) öğretmene (Kırmızı) ulaştır.</p>
+            
+            <canvas id="mazeCanvas" width="300" height="300"></canvas>
+            
+            <!-- Mobilde Oynamak İçin Yön Tuşları -->
+            <div class="maze-controls">
+                <div></div>
+                <button onmousedown="movePlayer(0, -1)" ontouchstart="movePlayer(0, -1)">⬆️</button>
+                <div></div>
+                <button onmousedown="movePlayer(-1, 0)" ontouchstart="movePlayer(-1, 0)">⬅️</button>
+                <button onmousedown="movePlayer(0, 1)" ontouchstart="movePlayer(0, 1)">⬇️</button>
+                <button onmousedown="movePlayer(1, 0)" ontouchstart="movePlayer(1, 0)">➡️</button>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
