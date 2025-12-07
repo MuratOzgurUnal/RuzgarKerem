@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <!-- Mobil Uyumluluk İçin Kritik Etiket -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Rüzgar Kerem Atılgan - Yazar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@700;900&family=Titan+One&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body class="landing-page">
+
+    <div class="landing-container">
+        
+        <!-- Sol Taraf (Masaüstünde Boşluk, Mobilde Gizli) -->
+        <div class="spacer-col"></div>
+
+        <!-- Sağ Taraf: İçerik -->
+        <div class="content-col">
+            
+            <div class="about-text-floating">
+                <!-- BAŞLIK DAHA BÜYÜK YAPILDI -->
+                <h1>Rüzgar Kerem Atılgan</h1>
+                <span class="badge">Genç Yazar ✍️</span>
+                
+                <div class="mini-bio">
+                    <p>Merhaba! Ben Rüzgar Kerem. <strong>9 yaşındayım</strong> ve Antalya’da yaşıyorum.</p>
+                    <p>İlk kitabım <strong>“Gizemli Okul Gezisi”</strong> ile karşınızdayım! 🚌</p>
+                    <p>♟️ Satranç, 🎮 Roblox, ⚽ Futbol ve 🏀 Basketbol oynamaya bayılırım.</p>
+                    <p>Kız kardeşim <strong>Zeynep Adel</strong> ile maceralarımız hiç bitmez!</p>
+                    <p>Ayrıca doğayı keşfetmeyi ve balık tutmayı çok severim. 🎣🐟</p>
+                </div>
+            </div>
+
+            <div class="books-section">
+                <div class="ribbon-title">KİTAPLARIM</div>
+                
+                <div class="book-shape-card">
+                    <div class="book-spine"></div>
+                    <div class="book-cover-content">
+                        <div class="book-icon">🚌</div>
+                        <h3>Gizemli Okul Gezisi</h3>
+                        <p>Kaybolan sınıf ve heyecan dolu bir macera!</p>
+                        <a href="kitap.html" class="read-btn">KİTABI OKU ▶</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Animasyonlar
+        gsap.from(".about-text-floating", { x: 50, opacity: 0, duration: 1, delay: 0.2 });
+        gsap.from(".book-shape-card", { y: 100, opacity: 0, rotation: 5, duration: 1, delay: 0.5, ease: "elastic.out(1, 0.5)" });
+    </script>
+</body>
+</html>

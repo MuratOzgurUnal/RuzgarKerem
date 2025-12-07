@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Gizemli Okul Gezisi</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- YENİ FONT: 'Fredoka' (Çok daha okunaklı ve yuvarlak) -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+
+    <div id="loader">
+        <div class="loader-content">🎈 Hikaye Yükleniyor...</div>
+    </div>
+
+    <button id="soundToggle">🔇</button>
+    <audio id="bgMusic" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-playground-fun-12.mp3" type="audio/mp3">
+    </audio>
+    <audio id="sfxPageTurn">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-paper-slide-1530.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="bg-layer" id="bgLayer"></div>
+    
+    <div class="particles">
+        <div class="particle p1"></div>
+        <div class="particle p2"></div>
+        <div class="particle p3"></div>
+    </div>
+
+    <a href="index.html" class="home-btn">🏠 Ana Sayfa</a>
+
+    <div class="story-container">
+
+        <!-- 1. SAYFA (KAPAK) -->
+        <section class="slide active" id="slide-1">
+            <div class="content cover-layout">
+                <h1 class="main-title">GİZEMLİ OKUL<br>GEZİSİ</h1>
+                <h3 class="author">Yazar: Rüzgar Kerem Atılgan</h3>
+                
+                <div class="hero-grid">
+                    <div class="char-item"><img src="assets/Ruzgar.svg"><span>Rüzgar</span></div>
+                    <div class="char-item"><img src="assets/Aslan.svg"><span>Aslan</span></div>
+                    <div class="char-item"><img src="assets/Demir.svg"><span>Demir</span></div>
+                    <div class="char-item"><img src="assets/Zeynep.svg"><span>Zeynep</span></div>
+                    <div class="char-item"><img src="assets/Ali.svg"><span>Ali</span></div>
+                    <div class="char-item"><img src="assets/Ahmet.svg"><span>Ahmet</span></div>
+                    <div class="char-item"><img src="assets/Ayse.svg"><span>Ayşe</span></div>
+                    <div class="char-item"><img src="assets/Gokturk.svg"><span>Göktürk</span></div>
+                    <div class="char-item"><img src="assets/Ozgeogretmen.svg"><span>Özge Öğrt.</span></div>
+                </div>
+                
+                <button class="start-btn" onclick="nextSlide()">BAŞLA ▶</button>
+            </div>
+        </section>
+
+        <!-- 2. SAYFA -->
+        <section class="slide" id="slide-2">
+            <div class="visual-area">
+                <img src="assets/Sayfa2.png" class="story-img">
+            </div>
+            <div class="text-area">
+                <p>Bir varmış, bir yokmuş... Evvel zaman içinde, kalbur saman içinde, Rüzgar adında macerayı çok seven, kıpır kıpır bir çocuk varmış. Rüzgar, okulunu ve arkadaşlarını çok severmiş.</p>
+                <p>O gün okulda büyük bir heyecan varmış! Çünkü beklenen gün gelip çatmıştı; sınıfça harika bir orman ve hayvanat bahçesi gezisine gideceklerdi. Rüzgar’ın en yakın arkadaşları Aslan ve Demir, sabah erkenden okula gelmişlerdi bile. Hepsi sıraya girmiş, gezi paralarını heyecanla Özge Öğretmenlerine veriyorlardı.</p>
+            </div>
+        </section>
+
+        <!-- 3. SAYFA -->
+        <section class="slide" id="slide-3">
+            <div class="visual-area">
+                <img src="assets/Sayfa3.png" class="story-img">
+            </div>
+            <div class="text-area">
+                <p>Bütün sınıf neşe içinde sarı okul otobüsüne bindi. Tekerlekler dönmeye başladığında herkes şarkılar söylüyor, camdan dışarıyı izliyordu. Yolculuk çok keyifliydi ama Aslan yerinde duramıyordu. Meraktan içi içine sığmayarak sordu:</p>
+                <p>“Özge Öğretmenim, o güzel ormana ne zaman varacağız? Daha çok yolumuz var mı?”</p>
+                <p>Öğretmenleri gülümseyerek saatine baktı:</p>
+                <p>“Sabret bakalım Aslan,” dedi. “Sadece 15 dakikamız kaldı, birazdan oradayız!”</p>
+            </div>
+        </section>
+
+        <!-- 4. SAYFA -->
+        <section class="slide" id="slide-4">
+            <div class="visual-area">
+                <img src="assets/Sayfa4.png" class="story-img">
+            </div>
+            <div class="text-area">
+                <p>Aslan gözünü saatten ayırmıyordu. Tik-tak, tik-tak... Ve nihayet 15 dakika dolmuştu! Otobüs durdu, kapılar açıldı ve macera başladı.</p>
+                <p>Özge Öğretmen, sınıfı sıraya sokarak önce sevimli maymunların olduğu bölüme götürdü. Maymunlar daldan dala atlıyor, komik sesler çıkarıyordu. Bütün sınıf kahkahalarla gülüyordu ama üç kişi hariç... Aslan, Rüzgar ve Demir’in aklı başka yerdeydi. Onlar, kocaman dişli, gizemli timsahları görmeyi her şeyden çok istiyorlardı!</p>
+            </div>
+        </section>
+
+        <!-- 5. SAYFA -->
+        <section class="slide" id="slide-5">
+            <div class="visual-area">
+                <img src="assets/Sayfa5.png" class="story-img">
+            </div>
+            <div class="text-area">
+                <p>Maymunlar muzlarını yerken, bizim kafadarlar birbirlerine kaş göz işareti yaptılar.</p>
+                <p>Rüzgar fısıldadı: “Hadi, şimdi tam sırası!”</p>
+                <p>Böylece Rüzgar, Aslan ve Demir; sessizce, parmak uçlarına basarak gruptan ayrıldılar. Kimseye görünmeden, gizlice timsahların kafesine doğru yürümeye başladılar. Kalpleri heyecandan küt küt atıyordu. Sonunda o büyük tabelayı gördüler: <strong>TİMSAHLAR BÖLÜMÜ</strong>. İşte varmışlardı!</p>
+            </div>
+        </section>
+
+        <!-- 6. SAYFA -->
+        <section class="slide" id="slide-6">
+            <div class="visual-area">
+                <img src="assets/Sayfa6.png" class="story-img">
+            </div>
+            <div class="text-area">
+                <p>Timsahlar gerçekten de büyüleyiciydi; kocaman ağızları ve zırh gibi derileri vardı. Üç arkadaş hayran hayran onlara baktı. Ancak bir süre sonra arkalarına döndüklerinde korkunç bir gerçeği fark ettiler: Sınıf arkadaşları ve öğretmenleri ortada yoktu!</p>
+                <p>Üçü de kaybolmuştu! O sırada Özge Öğretmen ise sınıfı saymış ve üç kişinin eksik olduğunu fark etmişti. Panik içinde her yere bakıyor, “Rüzgar! Aslan! Demir! Neredesiniz?” diye bağırarak onları arıyordu.</p>
+            </div>
+        </section>
+
+        <!-- 7. SAYFA -->
+        <section class="slide" id="slide-7">
+            <div class="visual-area">
+                <img src="assets/Sayfa7.png" class="story-img">
+            </div>
+            <div class="text-area">
+                <p>Rüzgar, Aslan ve Demir birbirlerine sokuldular. Orman birdenbire gözlerine çok daha büyük ve karmaşık görünmeye başlamıştı. Biraz korkmuşlardı.</p>
+                <p>Rüzgar saatine baktı ve derin bir nefes aldı. “Arkadaşlar,” dedi, “Okul gezisinin bitmesine ve otobüsün kalkmasına daha 3,5 saat var. O zamana kadar öğretmenimizi bulmalıyız!” Zaman daralmasa da, yalnız kalmak onları endişelendiriyordu.</p>
+            </div>
+        </section>
+
+        <!-- 8. SAYFA -->
+        <section class="slide" id="slide-8">
+            <div class="visual-area">
+                <img src="assets/Sayfa8.png" class="story-img">
+            </div>
+            <div class="text-area">
+                <p>Tam ne yapacaklarını düşünürlerken, ağaçların arasından sesler duydular. O yöne doğru gittiklerinde dört çocukla daha karşılaştılar! Bunlar Zeynep, Ali, Ahmet ve Ayşe’ydi.</p>
+                <p>Meğer onlar da gezide gruplarından kopmuşlar ve kaybolmuşlardı. Kaderleri ortaktı. Rüzgar, “Merak etmeyin,” dedi. “Birlikte olursak korkmamıza gerek kalmaz.” Artık 7 kişilik kocaman bir grup olmuşlardı.</p>
+            </div>
+        </section>
+
+        <!-- 9. SAYFA -->
+        <section class="slide" id="slide-9">
+            <div class="visual-area">
+                <img src="assets/Sayfa9.png" class="story-img">
+            </div>
+            <div class="text-area">
+                <p>Grup kalabalıktı ama herkes hala biraz üzgün ve endişeliydi. Yollarını nasıl bulacaklarını bilmiyorlardı. Tam o sırada Zeynep’in aklına harika bir fikir geldi. Gözleri parlayarak öne atıldı:</p>
+                <p>“Hey, üzülmeyin! Benim bu ormanı avucunun içi gibi bilen bir arkadaşım var. Belki o bize yardım edebilir!” Bu fikir, herkesin yüreğine su serpmişti.</p>
+            </div>
+        </section>
+
+        <!-- 10. SAYFA -->
+        <section class="slide" id="slide-10">
+            <div class="visual-area">
+                <img src="assets/Sayfa10.png" class="story-img">
+            </div>
+            <div class="text-area">
+                <p>Zeynep hemen koşarak yakınlarda olduğunu bildiği arkadaşı Göktürk’ü çağırmaya gitti. Kısa süre sonra yanında Göktürk ile geri döndü.</p>
+                <p>Rüzgar, bu zor durumda bile moralini bozmuyordu. Arkadaşlarına döndü ve lider gibi konuştu:</p>
+                <p>“Buradan kurtulacağız ama önce kendimize havalı bir takım adı bulmamız lazım! Biz sıradan kaybolmuş çocuklar değiliz, biz bir ekibiz!”</p>
+            </div>
+        </section>
+
+        <!-- 11. SAYFA -->
+        <section class="slide" id="slide-11">
+            <div class="visual-area">
+                <img src="assets/Sayfa11.png" class="story-img">
+            </div>
+            <div class="text-area">
+                <p>Göktürk, “Benim babam bu ormanı en iyi tanıyan kişidir, onu çağıralım!” dedi ve hemen babasından yardım istedi. Göktürk’ün babası koşarak geldi ve tecrübesiyle her yeri, her çalılığın arkasını aradı. Ama orman o kadar sık ve karışıktı ki, o bile sınıfın tam yerini bulamadı.</p>
+                <p>Yine de umutlarını kaybetmediler. O sırada Rüzgar heyecanla bağırdı:</p>
+                <p>“Buldum! Takımımızın adı <strong>‘KÜÇÜK MACERACILAR’</strong> olsun!”</p>
+                <p>Herkes bu ismi çok sevmişti. Artık onlar Küçük Maceracılar takımıydı!</p>
+            </div>
+        </section>
+
+        <!-- 12. SAYFA -->
+        <section class="slide" id="slide-12">
+            <div class="visual-area">
+                <img src="assets/Sayfa12.png" class="story-img">
+            </div>
+            <div class="text-area">
+                <p>Küçük Maceracılar ve Göktürk’ün babası aramaya devam ettiler ama sınıfı bir türlü göremiyorlardı. Sesler duyuyorlardı ama kimse yoktu. Sonunda anladılar ki, öğretmenleri ve sınıf arkadaşları hemen yan taraftaydı ama aralarında aşılması zor, yüksek bir duvar vardı!</p>
+                <p>Duvar çok yüksekti, kimse öbür tarafı göremiyordu. Rüzgar, takımın lideri olarak kararını verdi:</p>
+                <p>“Ben bu duvara tırmanacağım ve öğretmenimize yerimizi haber vereceğim!”</p>
+            </div>
+        </section>
+
+        <!-- 13. SAYFA (SON) -->
+        <section class="slide" id="slide-13">
+            <div class="visual-area">
+                <img src="assets/Sayfa13.png" class="story-img">
+            </div>
+            <div class="text-area">
+                <p>Rüzgar, tüm gücünü toplayarak duvara tutundu. Bir, iki, üç hamle derken kendini yukarı çekti ve duvarın tepesine ulaştı!</p>
+                <p>Aşağıya baktığında o tanıdık yüzü gördü: Özge Öğretmen!</p>
+                <p>Rüzgar sevinçle, “Öğretmenim, buradayız!” diye bağırdı. Sonunda başarmıştı. Hem öğretmenine kavuşmuş hem de Küçük Maceracılar takımını kurtarmıştı. O gün hepsi için unutulmaz, gizemli ve mutlu sonla biten bir okul gezisi olmuştu.</p>
+                <h2 class="end-text">SON.</h2>
+                <button class="restart-btn" onclick="location.reload()">TEKRAR OKU ↺</button>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Navigasyon -->
+    <div class="nav-ui">
+        <button onclick="prevSlide()" class="nav-btn">❮</button>
+        <span class="page-indicator" id="pageNumber">1 / 13</span>
+        <button onclick="nextSlide()" class="nav-btn">❯</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
