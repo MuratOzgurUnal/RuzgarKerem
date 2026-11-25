@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Rüzgar Kerem Atılgan - Yazar</title>
+    <title>Rüzgar Kerem Atılgan - Genç Yazar</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@700;900&family=Titan+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@700;800;900&family=Titan+One&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body class="landing-page">
 
     <div class="landing-container">
         
-        <!-- Sol Taraf (Masaüstünde Boşluk, Mobilde Gizli) -->
+        <!-- Sol Taraf (Masaüstünde Arka Plan Görseli İçin Boşluk, Mobilde Gizli) -->
         <div class="spacer-col"></div>
 
         <!-- Sağ Taraf: İçerik -->
@@ -20,27 +20,40 @@
             
             <div class="about-text-floating">
                 <h1>Rüzgar Kerem Atılgan</h1>
-                <span class="badge">Genç Yazar ✍️</span>
+                <span class="badge">Genç Yazar ✍️ & Geleceğin Futbolcusu ⚽</span>
                 
                 <div class="mini-bio">
-                    <p>Merhaba! Ben Rüzgar Kerem. <strong>9 yaşındayım</strong> ve Antalya’da yaşıyorum.</p>
-                    <p>İlk kitabım <strong>“Gizemli Okul Gezisi”</strong> ile karşınızdayım! 🚌</p>
-                    <p>♟️ Satranç, 🎮 Roblox, ⚽ Futbol ve 🏀 Basketbol oynamaya bayılırım.</p>
-                    <p>Kız kardeşim <strong>Zeynep Adel</strong> ile maceralarımız hiç bitmez!</p>
-                    <p>Ayrıca doğayı keşfetmeyi ve balık tutmayı çok severim. 🎣🐟</p>
+                    <p>Merhaba! Ben Rüzgar Kerem. <strong>2016 yılında Antalya’da doğdum</strong>, <strong>10 yaşındayım</strong>.</p>
+                    <p>📚 <strong>Kitap yazmayı</strong>, ⚽ <strong>futbol</strong> ve ♟️ <strong>satranç</strong> oynamayı çok seviyorum.</p>
+                    <p>Hafta sonları 🎣 <strong>balık tutmak</strong> ve dijitalde 🎮 <strong>Brawl Stars</strong> oynamak en büyük keyfim!</p>
+                    <p>Kardeşim <strong>Zeynep Adel</strong> ve ailemle maceralarımız hiç bitmez. En büyük hayalim ise <strong>profesyonel bir futbolcu</strong> olmak! 🌟</p>
                 </div>
             </div>
 
             <div class="books-section">
-                <div class="ribbon-title">KİTAPLARIM</div>
+                <div class="ribbon-title">DÜNYAM & KİTAPLARIM</div>
                 
-                <div class="book-shape-card">
-                    <div class="book-spine"></div>
-                    <div class="book-cover-content">
-                        <div class="book-icon">🚌</div>
-                        <h3>Gizemli Okul Gezisi</h3>
-                        <p>Kaybolan sınıf ve heyecan dolu bir macera!</p>
-                        <a href="kitap.html" class="read-btn">KİTABI OKU ▶</a>
+                <div class="cards-wrapper">
+                    <!-- 1. Kart: Mevcut Hikaye Kitabı -->
+                    <div class="book-shape-card">
+                        <div class="book-spine"></div>
+                        <div class="book-cover-content">
+                            <div class="book-icon">🚌</div>
+                            <h3>Gizemli Okul Gezisi</h3>
+                            <p>Kaybolan sınıf ve heyecan dolu bir macera!</p>
+                            <a href="kitap.html" class="read-btn">KİTABI OKU ▶</a>
+                        </div>
+                    </div>
+
+                    <!-- 2. Kart: Yeni Eklenen Ben Kimim Ödevi -->
+                    <div class="book-shape-card whoami-card">
+                        <div class="book-spine whoami-spine"></div>
+                        <div class="book-cover-content">
+                            <div class="book-icon">🧭</div>
+                            <h3>Ben Kimim?</h3>
+                            <p>Kendimi keşfetme yazım, özelliklerim ve hayallerim!</p>
+                            <button type="button" onclick="openWhoAmI()" class="read-btn whoami-btn">BENİ TANI ▶</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -48,10 +61,64 @@
         </div>
     </div>
 
+    <!-- BEN KİMİM? MODALI (AÇILIR PENCERE) -->
+    <div id="whoAmIModal" class="modal-overlay" onclick="outsideModalClick(event)">
+        <div class="modal-content whoami-modal-box">
+            <button class="close-modal" onclick="closeWhoAmI()">✖</button>
+            
+            <div class="whoami-header">
+                <img src="assets/Ruzgar.svg" alt="Rüzgar Kerem" class="whoami-avatar">
+                <div>
+                    <h2>Ben Kimim?</h2>
+                    <span class="whoami-subtitle">Kendimi Keşfetme Kitabım ✨</span>
+                </div>
+            </div>
+
+            <div class="whoami-body">
+                <p>Merhaba! Ben <strong>Rüzgar Kerem Atılgan</strong>. 2016 yılında güzel Antalya’da doğdum ve şu an 10 yaşındayım.</p>
+                
+                <p><strong>🎯 Hobilerim ve İlgi Alanlarım:</strong> Boş zamanlarımda hayal gücümü kullanarak <strong>kitap yazmayı</strong>, <strong>futbol oynamayı</strong>, <strong>balık tutmayı</strong> ve <strong>satranç oynamayı</strong> çok seviyorum. Yılda birkaç defa satranç turnuvalarına katılıp heyecanlı maçlar yapıyorum. Hafta sonları ise genellikle oltamı alıp balık tutmaya gitmekten büyük keyif alıyorum. Dijital dünyada da favori oyunum kesinlikle <strong>Brawl Stars</strong>!</p>
+
+                <p><strong>🧠 Kişisel Özelliklerim:</strong> Kendimde en sevdiğim ve güçlü bulduğum yönüm <strong>analitik düşünebilme yeteneğimdir</strong>. Tıpkı satrançtaki gibi adımlarımı önceden planlamak, biraz temkinli ve dikkatli hareket etmemi sağlıyor. Ancak dürüst olmak gerekirse, bu düşünme işini bazen biraz abarttığımda kaygılanabiliyorum ve aklıma olayların olumsuz ihtimalleri gelebiliyor. Bu yönümü fark ettiğim için artık olayların iyi ve güzel taraflarına da odaklanmaya çalışıyorum.</p>
+
+                <p><strong>👨‍👩‍👧‍👦 Canım Ailem:</strong> Biz dört kişilik sıcak bir aileyiz. Babam yaz aylarında Kaş’ta çalıştığı için yazları orada oluyor. Bir de 5 yaşında <strong>Zeynep Adel</strong> isminde çok tatlı bir kız kardeşim var.</p>
+
+                <p><strong>⚽ Gelecek Hayalim:</strong> İlerleyen zamanlarda futbol alanında çok çalışıp kendimi geliştirerek başarılı, <strong>profesyonel bir futbolcu</strong> olmayı hayal ediyorum.</p>
+
+                <p class="whoami-signature">Umarım biraz da olsa kendimi size tanıtabilmişimdir.<br>Sevgilerimle,<br><strong>Rüzgar Kerem Atılgan</strong></p>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Giriş Animasyonları
-        gsap.from(".about-text-floating", { x: 50, opacity: 0, duration: 1, delay: 0.2 });
-        gsap.from(".book-shape-card", { y: 100, opacity: 0, rotation: 5, duration: 1, delay: 0.5, ease: "elastic.out(1, 0.5)" });
+        gsap.from(".about-text-floating", { x: 50, opacity: 0, duration: 0.9, delay: 0.2 });
+        gsap.from(".book-shape-card", { y: 80, opacity: 0, rotation: 3, duration: 0.9, stagger: 0.15, delay: 0.4, ease: "back.out(1.4)" });
+
+        // Ben Kimim Modal Aç / Kapat Fonksiyonları
+        function openWhoAmI() {
+            const modal = document.getElementById('whoAmIModal');
+            modal.classList.add('open');
+            gsap.fromTo(".whoami-modal-box", 
+                { scale: 0.85, opacity: 0 }, 
+                { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.5)" }
+            );
+        }
+
+        function closeWhoAmI() {
+            document.getElementById('whoAmIModal').classList.remove('open');
+        }
+
+        function outsideModalClick(e) {
+            if (e.target.id === 'whoAmIModal') {
+                closeWhoAmI();
+            }
+        }
+
+        // ESC tuşu ile kapatma
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") closeWhoAmI();
+        });
     </script>
 </body>
 </html>
